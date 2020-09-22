@@ -1,9 +1,9 @@
-const Koa = require("koa");
+import Koa from "koa";
 
 const app = new Koa();
 const port: number = 3000;
 
-app.use(async (ctx: any, next: any) => {
+app.use(async (ctx: Koa.Context, next: Koa.Next) => {
   ctx.body = "hello, world.";
   await next();
 });
